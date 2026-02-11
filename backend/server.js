@@ -6,7 +6,11 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://*.netlify.app'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Connect to MongoDB
@@ -22,7 +26,7 @@ const noteSchema = new mongoose.Schema({
 
 const Note = mongoose.model('Note', noteSchema);
 
-// Routes
+
 // GET all notes
 app.get('/api/notes', async (req, res) => {
   try {
