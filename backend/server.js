@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://*.netlify.app'],
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://notes-memento.netlify.app'],
   credentials: true
 }));
 
